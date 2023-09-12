@@ -16,7 +16,7 @@ int main()
     do
     {
         printf("Enter the value of intervals x1 and x2 : ");
-        scanf("%f%f",&x,&x2);
+        scanf("%f%f",&x1,&x2);
         if(f(x1)*f(x2)<0)
         {
             flag=1;
