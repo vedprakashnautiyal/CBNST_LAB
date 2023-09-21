@@ -1,50 +1,73 @@
 #include <stdio.h>
 
-void Elimination(int n, float mat[][n + 1]) {
-    int i, j, k;
-    float factor, sum;
+int n;
+// Converts the Augmented matrix to Upper Triangular Matrix form
+void convertToUpperTriangular(float a[][n + 1], int n)
+{
+    int i, j, x, y, k;
+    float ratio;
+    for (i = 0; i < n; i++)
+    {
+        for (j = 0; j < n; j++)
+        {
+            if (j > i)
+            {   
+                ratio = a[j][i] / a[i][i];
+                for (k = 0; k < n + 1; k++)
+                    a[j][k] = a[j][k] - (ratio * a[i][k]);
 
-    for (i = 0; i < n; i++) {
-        for (j = i + 1; j < n; j++) {
-            factor = mat[j][i] / mat[i][i];
-            for (k = i; k <= n; k++) {
-                mat[j][k] -= factor * mat[i][k];
             }
         }
     }
-
-    float x[n];
-    x[n - 1] = mat[n - 1][n] / mat[n - 1][n - 1];
-
-    for (i = n - 2; i >= 0; i--) {
-        sum = 0;
-        for (j = i + 1; j < n; j++) {
-            sum += mat[i][j] * x[j];
-        }
-        x[i] = (mat[i][n] - sum) / mat[i][i];
+    printf("\nUpper Triangular Matrix:\n");
+    for (x = 0; x < n; x++)
+    {
+        for (y = 0; y < n + 1; y++)
+            printf("%.0f ", a[x][y]);
+        printf("\n");
     }
+    printf("\n");
+}
 
-    printf("Solution:\n");
-    for (i = 0; i < n; i++) {
-        printf("x%d = %.1f\n", i, x[i]);
+// Performs Back Substitution to find values of Unknowns
+void ApplyBackSubstitution(float a[][n + 1], float value[], int n)
+{
+    int i, j;
+    float sum;
+    value[n - 1] = a[n - 1][n] / a[n - 1][n - 1];
+
+    for (i = n - 2; i >= 0; i--)
+    {
+        sum = 0;
+        for (j = i + 1; j < n; j++)
+            sum = sum + a[i][j] * value[j];
+        value[i] = (a[i][n] - sum) / a[i][i];
     }
 }
 
-int main() {
-    int n;
-    printf("Enter No. Of Linear Equations: ");
+// prints the Value of Unknowns
+void print(float value[], int n)
+{
+    int i;
+    printf("Values of unknowns are:\n");
+    for (i = 0; i < n; i++)
+        printf("Value[%d]=%0.0f\n", i, value[i]);
+}
+int main()
+{
+    int i, j, k, x, y;
+    float sum, ratio;
+    printf("Enter no of Unknowns\n");
     scanf("%d", &n);
-
-    float mat[n][n + 1];
-
-    printf("Enter The Elements Of The Augmented Matrix:\n");
-    for (int i = 0; i < n; i++) {
-        for (int j = 0; j <= n; j++) {
-            scanf("%f", &mat[i][j]);
-        }
+    float a[n][n + 1], value[n];
+    printf("Enter the Augmented Matrix\n");
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < n + 1; j++)
+            scanf("%f", &a[i][j]);
     }
-
-    Elimination(n, mat);
-
+    convertToUpperTriangular(a, n);
+    ApplyBackSubstitution(a, value, n);
+    print(value, n);
     return 0;
 }
