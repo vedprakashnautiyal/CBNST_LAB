@@ -1,5 +1,5 @@
+//Gauss Elimination
 #include <stdio.h>
-
 int n;
 // Converts the Augmented matrix to Upper Triangular Matrix form
 void convertToUpperTriangular(float a[][n + 1], int n)
@@ -55,7 +55,6 @@ void print(float value[], int n)
 }
 int main()
 {
-    int i, j, k, x, y;
     float sum, ratio;
     printf("Enter no of Unknowns\n");
     scanf("%d", &n);

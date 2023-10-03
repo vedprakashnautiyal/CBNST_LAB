@@ -1,3 +1,4 @@
+//Gauss Seidel
 #include <stdio.h>
 #include <math.h>
 #include <stdbool.h>
@@ -104,7 +105,6 @@ int main()
     scanf("%d", &maxIterations);
     float a[n][n + 1];
     float values[n];
-    ;
 
     printf("Enter the Augmented Matrix\n");
     for (int i = 0; i < n; i++)

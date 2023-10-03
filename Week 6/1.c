@@ -1,4 +1,4 @@
-// Newton Forward Interploation Method
+// Newton Forward Interpolation Method
 #include <stdio.h>
 #include <math.h>
 

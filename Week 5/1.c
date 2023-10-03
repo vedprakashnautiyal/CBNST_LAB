@@ -1,5 +1,5 @@
+//Gauss Jordan
 #include <stdio.h>
-
 int n;
 // Converts the Augmented matrix to Diagonal form
 void convertToDiagonal(float a[][n + 1], int n)

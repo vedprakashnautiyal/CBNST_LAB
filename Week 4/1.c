@@ -1,5 +1,5 @@
 //Allowed Error - 0.0001
-
+//Secant Method
 #include <stdio.h>
 #include <math.h>
 
@@ -10,7 +10,7 @@ float f(float x)
 
 int main()
 {
-    float x2,x1, error;
+    float x0,x2,x1, error;
     int flag = 0, it = 0;
     do
     {
@@ -33,7 +33,7 @@ int main()
     do
     {
         it++;
-        float x0 = x2-((x2-x1)/(f(x2)-f(x1))*f(x2));
+        x0 = x2-((x2-x1)/(f(x2)-f(x1))*f(x2));
 
         printf("%d iteration, value of x is %f value of f(%f) is %f\n", it, x0, x0, f(x0));
         if ((fabs(f(x0))) <= error)

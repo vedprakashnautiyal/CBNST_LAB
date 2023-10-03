@@ -1,4 +1,5 @@
 //Allowed Error - 0.0001
+//Newton Rhapson Method
 
 #include <stdio.h>
 #include <math.h>
