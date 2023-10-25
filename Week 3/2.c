@@ -13,6 +13,11 @@ float g(float x)
     return ((x * x * x + 1) / 5);
 }
 
+float g_(float x)
+{
+    return ((3 * x * x)/5);
+}
+
 int main()
 {
     float x0, error;
@@ -22,7 +27,7 @@ int main()
     {
         printf("Enter the initial guess (x0): ");
         scanf("%f", &x0);
-        if (fabs(g(x0) - x0) < 1)
+        if (fabs(g_(x0)) < 1)
         {
             flag = 1;
         }
@@ -40,7 +45,7 @@ int main()
         it++;
         float x = g(x0);
         printf("%d iteration, value of x is %f, value of f(%f) is %f\n", it, x, x, f(x));
-        if (fabs(x - x0) <= error)
+        if (fabs(x-x0) <= error)
         {
             flag = 0;
             printf("The root of the equation is approximately %f after %d iterations\n", x, it);

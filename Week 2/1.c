@@ -38,7 +38,7 @@ int main()
         it++;
         x = (x1 + x2) / 2;
         printf("%d iteration, value of x is %f value of f(%f) is %f\n", it, x, x, f(x));
-        if ((fabs(f(x))) < error)
+        if ((fabs(x2-x1)) < error)
         {
             flag = 0;
             printf("The root of the equation is %f after %d iteration\n", x, it);
