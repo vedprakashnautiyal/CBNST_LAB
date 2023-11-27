@@ -47,5 +47,5 @@ int main()
         fact = fact * i;
         u1 = u1 * (u - (i - 1));
     }
-    printf("\n\nValue at X=%g is = %f", x, y);
+    printf("\n\nValue at X=%g is = %f\n", x, y);
 }
