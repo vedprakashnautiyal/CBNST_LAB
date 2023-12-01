@@ -4,7 +4,7 @@ float f (float x,float y){
 }
 int main(){
     float a,b,x,y,h,xn,k;
-    printf("\n Enter x0,y0,h,xn: ");
+    printf("\n Enter x0,y0,xn,h: ");
     scanf("%f%f%f%f",&a,&b,&xn,&h);
     x=a;
     y=b;
