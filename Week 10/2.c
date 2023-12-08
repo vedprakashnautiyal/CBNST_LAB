@@ -1,4 +1,4 @@
-//Curve Fitting For Second Order Parabola
+//Runge Kutta Method For 4th Order
 #include<stdio.h>
 #include<math.h>
 float f(float x,float y){
