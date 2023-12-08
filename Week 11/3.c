@@ -1,3 +1,4 @@
+//Linear Regression
 #include <stdio.h>
 
 #define S 50
