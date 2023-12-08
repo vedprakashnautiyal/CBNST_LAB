@@ -1,3 +1,4 @@
+//Curve Fitting For Second Order Parabola
 #include<stdio.h>
 #include<math.h>
 float f(float x,float y){
