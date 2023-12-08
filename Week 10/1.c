@@ -1,3 +1,4 @@
+//Curve Fitting For Straight Line
 #include <stdio.h>
 float f (float x,float y){
     return x+y;
